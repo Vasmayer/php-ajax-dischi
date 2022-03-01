@@ -3,6 +3,8 @@
 
     --main-background:#1E2D3B;
     --secondary-color:#2D3A46;
+    --text-color:white;
+    --text-artist-color:darkgray;
 }
 /* MAIN BACKGROUND COLOR */
 body
@@ -16,10 +18,35 @@ header{
     padding: 20px 10px;
     background-color:var(--secondary-color) ;
 }
-/* REDIMENSIONAMENTO LOGO */
+/* RESIZE LOGO */
 
 header img{
 
     width: 200px;
     height: auto;
+}
+
+/* MAIN */
+/* CARD */
+main .card
+{
+    background-color: var(--secondary-color);
+    padding: 20px;
+    height: 350px;
+}
+.info
+{
+    font-size: 20px;
+    text-align: center;
+}
+main .card .title
+{
+    color: var(--text-color);
+    text-transform: uppercase;
+    
+}
+
+main .card .author,main .card .year
+{
+    color: var(--text-artist-color);
 }

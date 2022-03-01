@@ -1,17 +1,21 @@
 <?php
 /* 
-Stampare a schermo una decina di dischi musicali (vedi screenshot).
+Stampare a schermo una decina di dischi musicali
+ (vedi screenshot).
 Utilizzare:
 Html, CSS, VueJS, axios, PHP
 Prima Milestone:
-Stampiamo i dischi solo con l’utilizzo di PHP, che stampa direttamente i dischi in pagina: 
+Stampiamo i dischi solo con l’utilizzo di PHP, 
+che stampa direttamente i dischi in pagina: 
 al caricamento della pagina ci saranno tutti i dischi.
 Seconda Milestone:
 Attraverso l’utilizzo di axios:
-al caricamento della pagina axios chiederà, attraverso una chiamata api, 
+al caricamento della pagina axios chiederà, 
+attraverso una chiamata api, 
 i dischi  e li stamperà attraverso vue.
 Bonus:
-Attraverso un’altra chiamata api, filtrare gli album per genere
+Attraverso un’altra chiamata api, 
+filtrare gli album per genere
 
 */
 
@@ -34,12 +38,25 @@ include 'data/data.php';
     <header>
             <img src="assets/img/logo.png" alt="Logo Spotify" class="img-fluid">
     </header>
-    <main>
+    <main class="mt-5">
         <div class="container">
-            <div class="row">
-                <?php foreach($database as $music):?>
-                    <div class="col-10 offset-1 col-md-4 col-lg-2 offset-lg-1">
-                        
+            <div class="row g-5">
+                <?php foreach($database as $key => $song):?>
+                    <div class="col-2 <?= $key % 5 === 0 ? 'offset-1' : '' ?>">
+                        <div class="card">
+                            <img src="<?= $song['poster']?>" alt="song" class="img-fluid">
+                            <div class="info">
+                                <div class="title mt-3">
+                                    <?= $song['title']?>
+                                </div>
+                                <div class="author mt-3">
+                                    <?= $song['author']?>
+                                </div>
+                                <div class="year">
+                                    <?= $song['year']?>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
