@@ -1,0 +1,25 @@
+
+:root{
+
+    --main-background:#1E2D3B;
+    --secondary-color:#2D3A46;
+}
+/* MAIN BACKGROUND COLOR */
+body
+{
+    background-color:var(--main-background)
+}
+
+/* HEADER */
+
+header{
+    padding: 20px 10px;
+    background-color:var(--secondary-color) ;
+}
+/* REDIMENSIONAMENTO LOGO */
+
+header img{
+
+    width: 200px;
+    height: auto;
+}
