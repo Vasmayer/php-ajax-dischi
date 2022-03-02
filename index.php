@@ -35,33 +35,35 @@ include 'data/data.php';
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <header>
-            <img src="assets/img/logo.png" alt="Logo Spotify" class="img-fluid">
-    </header>
-    <main class="mt-5">
-        <div class="container">
-            <div class="row g-5">
-                <?php foreach($database as $key => $song):?>
-                    <div class="col-2 <?= $key % 5 === 0 ? 'offset-1' : '' ?>">
-                        <div class="card">
-                            <img src="<?= $song['poster']?>" alt="song" class="img-fluid">
-                            <div class="info">
-                                <div class="title mt-3">
-                                    <?= $song['title']?>
-                                </div>
-                                <div class="author mt-3">
-                                    <?= $song['author']?>
-                                </div>
-                                <div class="year">
-                                    <?= $song['year']?>
+    
+        <header>
+                <img src="assets/img/logo.png" alt="Logo Spotify" class="img-fluid">
+        </header>
+        <main class="mt-5">
+            <div class="container">
+                <div class="row g-5">
+                    <?php foreach($database as $key => $song):?>
+                        <div class="col-2 <?= $key % 5 === 0 ? 'offset-1' : '' ?>">
+                            <div class="card">
+                                <img src="<?= $song['poster']?>" alt="song" class="img-fluid">
+                                <div class="info">
+                                    <div class="title mt-3">
+                                        <?= $song['title']?>
+                                    </div>
+                                    <div class="author mt-3">
+                                        <?= $song['author']?>
+                                    </div>
+                                    <div class="year">
+                                        <?= $song['year']?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0/js/bootstrap.min.js" integrity="sha512-Pv/SmxhkTB6tWGQWDa6gHgJpfBdIpyUy59QkbshS1948GRmj6WgZz18PaDMOqaEyKLRAvgil7sx/WACNGE4Txw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 </html>
